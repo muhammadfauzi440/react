@@ -22,9 +22,7 @@ function App() {
       </h1>
 
       <div className='flex gap-6'>
-        <Items namaItems="Prismatic Shard" lokasiDitemukan="Di dalam gua dan di dapatkan dari monster" deskripsiItem="Batuan mineral yang sangat langka dan sangat susah ditemukan"/>
-        <Items namaItems="Diamond" lokasiDitemukan="Di dalam gua dan di dapatkan dari monster" deskripsiItem="Mineral yang bisa drop dari monster pada lantai 50-80"/>
-        <Items namaItems="Dragon Tooth" lokasiDitemukan="Ditemukan di Volcano Dungeon dari fosil naga" deskripsiItem="Gigi naga yang hanya bisa di temukan di volcano dungeon"/>
+        <Items />
       </div>
 
       <h1 className="text-4xl font-bold text-amber-900 mt-4">
