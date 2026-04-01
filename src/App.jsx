@@ -12,14 +12,11 @@ function App() {
       </div>
 
       <div className='flex gap-6'>
-        <Items />
+        <Orang />
       </div>
 
-
       <div className='flex gap-6'>
-        <Orang nama="Haley" deskripsiOrang="Berambut kuning dan suka bermain di ladang" alat="Kamera"/>
-        <Orang nama="Pierre" deskripsiOrang="Penjaga toko yang kapitalis dan pelit" alat="Kalkulator"/>
-        <Orang nama="Demetrius" deskripsiOrang="Seorang ilmuwan yang suka eksperimen" alat="Komputer"/>
+        <Items />
       </div>
     </div>
   );

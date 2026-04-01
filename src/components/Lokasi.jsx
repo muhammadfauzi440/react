@@ -61,7 +61,7 @@ export default function Lokasi() {
 
                 <hr className="my-2 border-slate-200"/>
 
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm font-bold text-slate-600 leading-relaxed">
                     {lokasi.deskripsiLokasi}
                 </p>
             </li>
