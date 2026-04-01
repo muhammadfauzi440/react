@@ -12,6 +12,10 @@ export default function Items() {
   ];
 
   return (
+    <div>
+    <h1 className="text-4xl text-center mb-6 font-bold text-indigo-900 mt-4">
+        Daftar Items
+      </h1>
     <div className="bg-white p-6 rounded-2xl shadow-xl border-2 border-amber-200 w-full max-w-full">
       <div className="flex justify-between items-center mb-6 border-b pb-4 gap-4">
         <h2 className="text-2xl font-bold text-amber-800">Toko Pierre 🏪</h2>
@@ -38,7 +42,7 @@ export default function Items() {
               </div>
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex flex-col gap-2">
 
             
             <button
@@ -47,17 +51,18 @@ export default function Items() {
               setIsiRansel(isiRansel + 1);
               setTotalHarga(totalHarga + barang.harga);
              }}
-              className="bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 active:scale-95 transition-all cursor-pointer font-medium"
+              className="bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-600 active:scale-95 transition-all cursor-pointer font-medium disabled:cursor-not-allowed disabled:opacity-50"
             >
-              Beli
+              Masukkan Ransel
             </button>
             <button
+            disabled={isiRansel + 5 > 10}
             onClick={() => {
               setIsiRansel(isiRansel + 5);
               setTotalHarga(totalHarga + (barang.harga * 5));
             }}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 active:scale-95 transition-all cursor-pointer font-medium">
-              Beli 5
+            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-600 active:scale-95 transition-all cursor-pointer font-medium disabled:cursor-not-allowed disabled:opacity-50">
+              Masukkan Ransel x5
             </button>
             </div>
           </li>
@@ -77,6 +82,7 @@ export default function Items() {
       className="bg-red-600 px-4 py-2 rounded-lg text-white font-bold hover:bg-red-700 hover:scale-105 mt-2 cursor-pointer transition-all active:scale-95">
         Reset
       </button>
+    </div>
     </div>
   );
 }
