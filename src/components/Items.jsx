@@ -38,6 +38,9 @@ export default function Items() {
               </div>
             </div>
 
+            <div className="flex gap-2">
+
+            
             <button
             disabled={isiRansel >= 10}
              onClick={() => {
@@ -48,6 +51,15 @@ export default function Items() {
             >
               Beli
             </button>
+            <button
+            onClick={() => {
+              setIsiRansel(isiRansel + 5);
+              setTotalHarga(totalHarga + (barang.harga * 5));
+            }}
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 active:scale-95 transition-all cursor-pointer font-medium">
+              Beli 5
+            </button>
+            </div>
           </li>
         ))}
       </ul>
