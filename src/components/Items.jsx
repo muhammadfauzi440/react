@@ -62,7 +62,7 @@ export default function Items() {
               setIsiRansel(isiRansel + 1);
               setTotalHarga(totalHarga + barang.harga);
              }}
-              className="bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-600 active:scale-95 transition-all cursor-pointer font-medium disabled:cursor-not-allowed disabled:opacity-50"
+              className="bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 active:scale-95 transition-all cursor-pointer font-medium disabled:cursor-not-allowed disabled:opacity-50"
             >
               Masukkan Ransel
             </button>
@@ -72,7 +72,7 @@ export default function Items() {
               setIsiRansel(isiRansel + 5);
               setTotalHarga(totalHarga + (barang.harga * 5));
             }}
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-600 active:scale-95 transition-all cursor-pointer font-medium disabled:cursor-not-allowed disabled:opacity-50">
+            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:scale-95 transition-all cursor-pointer font-medium disabled:cursor-not-allowed disabled:opacity-50">
               Masukkan Ransel x5
             </button>
             </div>
