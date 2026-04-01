@@ -17,7 +17,7 @@ function App() {
         <Orang nama="Demetrius" deskripsiOrang="Seorang ilmuwan yang suka eksperimen" alat="Komputer"/>
       </div>
 
-      <h1 className="text-4xl font-bold text-blue-900 mt-4">
+      <h1 className="text-4xl font-bold text-indigo-800 mt-4">
         Daftar Items
       </h1>
 
