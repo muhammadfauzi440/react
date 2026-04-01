@@ -26,7 +26,7 @@ export default function Items() {
     <div>
     <h1 className="text-4xl text-center mb-6 font-bold text-indigo-900 mt-4">
         Daftar Items
-      </h1>
+    </h1>
     <div className="bg-white p-6 rounded-2xl shadow-xl border-2 border-amber-200 w-full max-w-full">
       <div className="flex justify-between items-center mb-6 border-b pb-4 gap-4">
         <h2 className="text-2xl font-bold text-amber-800">Toko Pierre 🏪</h2>
