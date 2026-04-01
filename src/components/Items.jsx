@@ -1,8 +1,19 @@
-import { use, useState } from "react";
+import { use, useState, useEffect } from "react";
 
 export default function Items() {
-  const [isiRansel, setIsiRansel] = useState(0);
-  const [totalHarga, setTotalHarga] = useState(0);
+  const [isiRansel, setIsiRansel] = useState(() => {
+    const dataSimpanan = localStorage.getItem("simpananRansel");
+    return dataSimpanan ? parseInt(dataSimpanan) : 0;
+  });
+  const [totalHarga, setTotalHarga] = useState(() => {
+    const dataHarga = localStorage.getItem("simpananHarga");
+    return dataHarga ? parseInt(dataHarga) : 0;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("simpananRansel", isiRansel);
+    localStorage.setItem("simpananHarga", totalHarga);
+  }, [isiRansel, totalHarga]);
 
   const daftarBarang = [
     { id: 1, nama: "Parsnip", harga: 35},
