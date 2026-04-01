@@ -32,35 +32,41 @@ export default function Lokasi() {
       deskripsiLokasi:
         "Sebuah pulau yang berada jauh dari kota pelican town dan hanya bisa di akses dengan menggunakan kapal",
     },
+    {
+        id: 6,
+        namaLokasi: "The Desert",
+        lokasiNpc: "Sandy, Emily, Pam",
+        deskripsiLokasi:
+            "Sebuah gurun yang berada di sebelah timur kota pelican town dan hanya bisa di akses dengan menggunakan bus",
+    }
   ];
 
   return (
-    <div>
-      <h1 className="text-4xl font-bold text-amber-900 mt-4">Daftar Lokasi</h1>
-      <div className="bg-white p-6 rounded-2xl shadow-2xl border-2 border-amber-800 hover:scale-105 transition-transform duration-300">
-        <ul clasasName="flex flex-col gap-4">
-          {namaLokasiList.map((lokasi) => (
-            <li
-              key={lokasi.id}
-              clasasName="flex justify-between items-center p-3 bg-slate-50 border border-slate-100 rounded-xl hover:shadow-md transition-shadow"
-            >
-              <div className="flex items-center gap-3">
-                <div>
-                  <p className="font-bold text-slate-700">
+    <div className="w-full">
+        <h1 className="text-4xl text-white font-bold drop-shadow-2xl text-center mb-6 mt-4">
+            Daftar Lokasi
+        </h1>
+
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+        {namaLokasiList.map((lokasi) => (
+            <li key={lokasi.id} 
+            className="bg-white p-6 rounded-2xl shadow-2xl border-2 border-amber-800 hover:scale-105 transition-transform duration-300 flex flex-col gap-2">
+                <h2 className="text-2xl font-bold text-slate-600">
                     {lokasi.namaLokasi}
-                  </p>
-                  <p className="font.bold text-green-600 font-medium">
-                    {lokasi.lokasiNpc}
-                  </p>
-                  <p className="text-sm text-slate-500">
+                </h2>
+
+                <p className="font-bold text-emerald-600 text-sm">
+                    Npc: {lokasi.lokasiNpc}
+                </p>
+
+                <hr className="my-2 border-slate-200"/>
+
+                <p className="text-sm text-slate-600 leading-relaxed">
                     {lokasi.deskripsiLokasi}
-                  </p>
-                </div>
-              </div>
+                </p>
             </li>
-          ))}
+        ))}
         </ul>
-      </div>
     </div>
   );
 }
