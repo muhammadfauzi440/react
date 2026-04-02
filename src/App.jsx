@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 import Orang from './components/Petani'
 import Items from './components/Items'
@@ -8,9 +8,9 @@ import './index.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
     <div className="font-poppins flex flex-col items-center min-h-screen bg-[url('/images/bg-stardew-blue.jpg')] bg-cover bg-center bg-fixed drop-shadow-2xl gap-8 p-10">
-      <nav className="w-full bg-gray-900 text-gray-100 p-4 shadow-xl rounded-2xl flex justify-around gap-8 font-bold text-lg border-b-4 border-gray-950">
+      <nav className="w-full text-gray-200 p-4 shadow-xl rounded-2xl flex justify-around gap-8 font-bold text-lg">
         <Link to="/" className="hover:underline hover:scale-105 transition-all">Home</Link>
         <Link to="/lokasi" className="hover:underline hover:scale-105 transition-all">Lokasi</Link>
         <Link to="/penduduk" className="hover:underline hover:scale-105 transition-all">Penduduk Desa</Link>
@@ -26,7 +26,7 @@ function App() {
         </Routes>
       </div>
     </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 

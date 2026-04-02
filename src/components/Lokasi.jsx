@@ -1,7 +1,13 @@
-import { use, useState } from "react";
+import { use, useState, useEffect } from "react";
 
 export default function Lokasi() {
-  const [daftarLokasi, setDaftarLokasi] = useState([
+  const [daftarLokasi, setDaftarLokasi] = useState(() => {
+    const dataSimpanan = localStorage.getItem("simpananDaftarLokasi");
+
+    if (dataSimpanan) {
+      return JSON.parse(dataSimpanan);
+    } else {
+      return [
     {
       id: 1,
       namaLokasi: "Pelican Town",
@@ -41,13 +47,19 @@ export default function Lokasi() {
         deskripsiLokasi:
             "Sebuah gurun yang berada di sebelah timur kota pelican town dan hanya bisa di akses dengan menggunakan bus",
     }
-  ]);
+      ];
+    }
+  }
+);
 
   const [inputLokasi, setInputLokasi] = useState("");
   const [inputNpc, setInputNpc] = useState("");
   const [inputDeskripsi, setInputDeskripsi] = useState("");
-
   const [pesanSukses, setPesanSukses] = useState("");
+
+  useEffect (() => {
+    localStorage.setItem("simpananDaftarLokasi", JSON.stringify(daftarLokasi));
+  }, [daftarLokasi]);
 
   function handleSubmit(event) {
     event.preventDefault();

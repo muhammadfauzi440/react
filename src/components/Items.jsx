@@ -29,7 +29,7 @@ export default function Items() {
     </h1>
     <div className="bg-white p-6 rounded-2xl shadow-xl border-2 border-amber-200 w-full max-w-full">
       <div className="flex justify-between items-center mb-6 border-b pb-4 gap-4">
-        <h2 className="text-2xl font-bold text-amber-800">Toko Pierre 🏪</h2>
+        <h2 className="text-2xl font-bold text-amber-800">Toko Pierre</h2>
         <div className="bg-amber-100 text-amber-800 font-bold px-4 py-2 rounded-full">
           Ransel: {isiRansel} item
         </div>
@@ -42,7 +42,7 @@ export default function Items() {
         {daftarBarang.map((barang) => (
           <li
             key={barang.id}
-            className="flex justify-between items-center p-3 bg-slate-50 border border-slate-100 rounded-xl hover:shadow-md transition-shadow"
+            className="mb-2 flex justify-between items-center p-3 bg-slate-50 border-2 border-slate-200 rounded-xl hover:shadow-md transition-shadow"
           >
             <div className="flex items-center gap-3">
               <div>
@@ -85,6 +85,15 @@ export default function Items() {
           ⚠️ Ranselmu sudah penuh!
         </div>
       )}
+
+      {isiRansel === 0 && (
+        <div>
+          <p className="mb-4 p-3 bg-emerald-100 text-center rounded-lg font-bold text-sm text-emerald-700">
+            Ranselmu kosong. Pilih item untuk dimasukkan!
+          </p>
+        </div>
+      )}
+      
       <button 
       onClick={() => {
         setIsiRansel(0);
