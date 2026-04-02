@@ -1,5 +1,7 @@
+import { useState } from "react";
+
 export default function Lokasi() {
-  const namaLokasiList = [
+  const [daftarLokasi, setDaftarLokasi] = useState([
     {
       id: 1,
       namaLokasi: "Pelican Town",
@@ -39,7 +41,28 @@ export default function Lokasi() {
         deskripsiLokasi:
             "Sebuah gurun yang berada di sebelah timur kota pelican town dan hanya bisa di akses dengan menggunakan bus",
     }
-  ];
+  ]);
+
+
+  const [inputLokasi, setInputLokasi] = useState("");
+  const [inputNpc, setInputNpc] = useState("");
+  const [inputDeskripsi, setInputDeskripsi] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const lokasiBaru = {
+      id: Date.now(),
+      namaLokasi: inputLokasi,
+      lokasiNpc: inputNpc,
+      deskripsiLokasi: inputDeskripsi
+    }; setDaftarLokasi([...daftarLokasi, lokasiBaru]);
+
+
+    setInputLokasi("");
+    setInputNpc("");
+    setInputDeskripsi("");
+  }
 
   return (
     <div className="w-full">
@@ -47,8 +70,48 @@ export default function Lokasi() {
             Daftar Lokasi
         </h1>
 
+        <form className="bg-white p-6 rounded-2xl shadow-2xl mb-8 flex flex-col gap-4 max-w-2xl border-2 border-slate-200 mx-auto"
+        onSubmit={handleSubmit}
+        >
+            <h2 className="font-bold text-2xl text-slate-700">
+              Tambah Lokasi Baru 
+            </h2>
+
+            <input
+            type="text"
+            placeholder="Nama Lokasi (examples: The Mines)"
+            value={inputLokasi}
+            onChange={(event) => setInputLokasi(event.target.value)}
+            className="border-2 p-2 rounded-lg"
+            required
+            />
+
+            <input 
+            type="text"
+            placeholder="Npc yang berada di lokasi tersebut"
+            value={inputNpc}
+            onChange={(event) => setInputNpc(event.target.value)}
+            className="border-2 p-2 rounded-lg"
+            required
+            />
+
+            <textarea
+            placeholder="Deskripsi singkat lokasi ini"
+            value={inputDeskripsi}
+            onChange={(event) => setInputDeskripsi(event.target.value)}
+            className="border-2 p-2 rounded-lg"
+            required
+            />
+            
+            <button
+            type="submit"
+            className="bg-green-600 text-white font-bold py-2 px-4 rounded-2xl hover:bg-green-700 transition-colors duration-300 hover:scale-105 active:scale-95">
+              Simpan Data
+            </button>
+        </form>
+
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
-        {namaLokasiList.map((lokasi) => (
+        {daftarLokasi.map((lokasi) => (
             <li key={lokasi.id} 
             className="bg-white p-6 rounded-2xl shadow-2xl border-2 border-amber-800 hover:scale-105 transition-transform duration-300 flex flex-col gap-2">
                 <h2 className="text-2xl font-bold text-slate-600">
