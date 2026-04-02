@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Orang from './components/Petani'
 import Items from './components/Items'
 import Lokasi from './components/Lokasi'
+import Home from './components/Home'
 import './index.css'
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
       <div className='p-10 grow flex flex-col items-center'>
         <Routes>
-          <Route path="/"></Route>
+          <Route path="/" element={<Home />} />
           <Route path="/lokasi" element={<Lokasi />} />
           <Route path="/penduduk" element={<Orang />} />
           <Route path="/items" element={<Items />} />
