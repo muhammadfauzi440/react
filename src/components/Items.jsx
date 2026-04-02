@@ -1,4 +1,4 @@
-import { use, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function Items() {
   const [isiRansel, setIsiRansel] = useState(() => {
