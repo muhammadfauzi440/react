@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 
 export default function Lokasi() {
   const [daftarLokasi, setDaftarLokasi] = useState([
@@ -43,10 +43,11 @@ export default function Lokasi() {
     }
   ]);
 
-
   const [inputLokasi, setInputLokasi] = useState("");
   const [inputNpc, setInputNpc] = useState("");
   const [inputDeskripsi, setInputDeskripsi] = useState("");
+
+  const [pesanSukses, setPesanSukses] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -62,6 +63,11 @@ export default function Lokasi() {
     setInputLokasi("");
     setInputNpc("");
     setInputDeskripsi("");
+    setPesanSukses("Data berhasil disimpan!");
+
+    setTimeout(() => {
+      setPesanSukses("");
+    }, 5000);
   }
 
   return (
@@ -70,7 +76,13 @@ export default function Lokasi() {
             Daftar Lokasi
         </h1>
 
-        <form className="bg-white p-6 rounded-2xl shadow-2xl mb-8 flex flex-col gap-4 max-w-2xl border-2 border-slate-200 mx-auto"
+        {pesanSukses && (  
+        <div className="bg-emerald-200 border-border-emerald-300 text-green-800 font-bold px-4 py-3 shadow-md mb-6 animate-pulse rounded-lg">
+          {pesanSukses}
+        </div>
+        )}
+
+        <form className="bg-white p-6 rounded-2xl shadow-2xl mb-8 flex flex-col gap-4 max-w-2xl border-2 border-amber-800 mx-auto"
         onSubmit={handleSubmit}
         >
             <h2 className="font-bold text-2xl text-slate-700">
